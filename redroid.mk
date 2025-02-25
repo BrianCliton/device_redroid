@@ -87,12 +87,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.example \
 
 
-ifneq ($(REDROID_DISABLE_OMX),true)
-$(call inherit-product, hardware/redroid/omx/omx.mk)
-else
-$(call inherit-product, hardware/redroid/c2/c2.mk)
-endif
-
 
 DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
 
@@ -128,4 +122,3 @@ $(call inherit-product-if-exists, product.mk)
 
 $(call inherit-product, vendor/redroid/vendor.mk)
 
-$(call inherit-product, device/redroid-prebuilts/prebuilts.mk)
