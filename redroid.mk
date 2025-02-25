@@ -85,8 +85,11 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     power.default \
     android.hardware.power-service.example \
+    libdrm \
+    libgbm \
+    hwcomposer.drm \
 
-
+BOARD_USES_DRM_HWCOMPOSER := true
 
 DEVICE_MANIFEST_FILE += device/redroid/android.hardware.bluetooth@1.1.xml
 
@@ -103,6 +106,7 @@ PRODUCT_PACKAGES += \
     primary_audio_policy_configuration.xml \
     surround_sound_configuration_5_0.xml \
 
+PRODUCT_PACKAGES := $(filter-out hwcomposer.redroid,$(PRODUCT_PACKAGES))
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
