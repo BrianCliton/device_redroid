@@ -1,3 +1,4 @@
+
 # Copyright (C) 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -111,6 +112,10 @@ PRODUCT_PACKAGES += \
     surround_sound_configuration_5_0.xml \
 
 PRODUCT_PACKAGES := $(filter-out hwcomposer.redroid,$(PRODUCT_PACKAGES))
+
+# Mesa
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
