@@ -47,11 +47,15 @@ AUDIOSERVER_MULTILIB := first
 
 TARGET_VENDOR_PROP += device/redroid/redroid.prop
 
+    # libEGL_angle \
+    # libGLESv1_CM_angle \
+    # libGLESv2_angle \
+    #  vulkan.pastel \
+
 PRODUCT_PACKAGES += \
-    libEGL_angle \
-    libGLESv1_CM_angle \
-    libGLESv2_angle \
-    vulkan.pastel \
+    libEGL_mesa \
+    libGLESv1_CM_mesa \
+    libGLESv2_mesa \
 
 
 # Phone App required
