@@ -84,6 +84,11 @@ PRODUCT_PACKAGES += \
     power.default \
     android.hardware.power-service.example \
     android.hardware.power.stats@1.0-service.mock \
+    libdrm \
+    libgbm \
+    hwcomposer.drm \
+
+BOARD_USES_DRM_HWCOMPOSER := true
 
 
 ifneq ($(REDROID_DISABLE_OMX),true)
@@ -113,6 +118,7 @@ PRODUCT_PACKAGES += \
     primary_audio_policy_configuration.xml \
     surround_sound_configuration_5_0.xml \
 
+PRODUCT_PACKAGES := $(filter-out hwcomposer.redroid,$(PRODUCT_PACKAGES))
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
